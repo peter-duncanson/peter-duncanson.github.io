@@ -1,0 +1,169 @@
+:root {
+    --platinum: #DADDD8;
+    --cadet-grey: #9DA3A4;
+    --eerie-black: #1A1F16;
+    --white: #fff;
+    --dark-grey: #333;
+    --light-grey-underline: #e9ecef;
+    --accent-green: #28a745;
+}
+
+body {
+    background-color: var(--platinum);
+    color: var(--dark-grey);
+    font-family: Consolas, monospace;
+    line-height: 1.6;
+    margin: 20px;
+}
+
+h1 {
+    color: var(--eerie-black);
+    text-align: center;
+}
+
+nav {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--eerie-black);
+    padding: 10px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: var(--white);
+    background-color: var(--accent-green);
+}
+
+header {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 1em;
+    color: var(--eerie-black);
+}
+
+footer {
+    text-align: center;
+}
+
+.hero {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--cadet-grey);
+    border-radius: 0px;
+    margin: 20px 0;
+}
+
+.resume-button {
+    display: inline-block;
+    background-color: var(--cadet-grey);
+    color: var(--eerie-black);
+    padding: 12px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.resume-button:hover {
+    background-color: var(--accent-green);
+    color: var(--white);
+}
+
+/* button for stuff that isnt resume and its text stuff  */
+.listing-button{
+    display: inline-block;
+    background-color: var(--cadet-grey);
+    color: var(--eerie-black);
+    padding: 1em;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.listing-button:hover {
+    background-color: var(--accent-green);
+    color: var(--white);
+}
+
+
+.page-container {
+    background-color: var(--cadet-grey);
+    padding: 5px;
+    margin: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.page-container h2 {
+    text-align: center;
+    color: var(--eerie-black);
+    margin-bottom: 20px;
+}
+
+.about-pic {
+    float: left;
+    width: 200px;
+    border-radius: 8px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+.about-content h3 {
+    border-bottom: 2px solid var(--light-grey-underline);
+    padding-bottom: 5px;
+    margin-top: 30px;
+}
+
+.download-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+#interactive-box:hover {
+    background-color: var(--accent-green);
+    color: var(--white);
+}
+
+::selection {
+    background-color: var(--accent-green); 
+    color: var(--white);
+}
+
+.contact-info a {
+    color: var(--eerie-black);
+}
+
+.contact-info a:hover {
+    color: var(--white);
+    background-color: var(--accent-green);
+    padding: 5px 10px;
+    border-radius: 0px;
+    text-decoration: none;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.responsive-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+}
+
+.photo-grid img {
+    max-width: 600px;
+    height: auto;
+    display: block;
+}
+
+html {
+  scrollbar-width: 36px;
+  scrollbar-color: var(--accent-green) var(--platinum);
+}
+
