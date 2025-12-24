@@ -11,6 +11,7 @@
     --pumpkin: #F37A1A;
     --golden-brown: #D79921;
     --bone: #EBDBB2;
+    --tan-green: #8CA655;
 }
 
 body {
@@ -39,8 +40,8 @@ nav a {
 }
 
 nav a:hover {
-    color: var(--cream);
-    background-color: var(--tree-green);
+    color: var(--dark-grey);
+    background-color: var(--tan-green);
     border-radius: 5px;
 
 }
@@ -63,6 +64,59 @@ footer {
     border-radius: 5px;
     margin: 20px 0;
 }
-    background-color: var(--tree-green);
-    color: var(--cream);
 
+
+.container-grid {
+    display: grid;
+    border-radius: 5px;
+    grid-template-rows: auto auto auto;
+    background-color: var(--eerie-black);
+    padding: 20px;
+    gap: 20px;
+}
+
+.container-grid div {
+    background-color: var(--dark-grey);
+    border: 1px solid var(--bone);
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 30px;
+    text-align: left;
+}
+
+.container-grid div:hover {
+    color: var(--dark-grey);
+    background-color: var(--tan-green);
+    border: 1px solid var(--eerie-black);
+    border-radius: 5px;
+}
+
+
+/*** Works on common browsers ***/
+::selection {
+    background-color: var(--rust);
+    color: var(--golden-brown);
+}
+
+/*** Mozilla based browsers ***/
+::-moz-selection {
+    background-color: var(--rust);
+    color: var(--golden-brown);
+}
+
+/***For Other Browsers ***/
+::-o-selection {
+    background-color: var(--rust);
+    color: var(--golden-brown);
+}
+
+::-ms-selection {
+    background-color: var(--rust);
+    color: var(--golden-brown);
+}
+
+/*** For Webkit ***/
+::-webkit-selection {
+    background-color: var(--rust);
+    color: var(--golden-brown);
+}
