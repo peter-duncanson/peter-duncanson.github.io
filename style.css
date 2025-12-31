@@ -3,6 +3,7 @@
     --cadet-grey: #9DA3A4;
     --eerie-black: #1A1F16;
     --cream: #DBCCA7;
+    --chill-yellow: #F7DC6F;
     --dark-grey: #45433C;
     --light-grey-underline: #e9ecef;
     --accent-green: #28a745;
@@ -16,6 +17,7 @@
 
 body {
     background-color: var(--dark-grey);
+    background: url("images/tiles/green_grass.png");
     color: var(--bone);
     font-family: Consolas, monospace;
     line-height: 1.6;
@@ -37,10 +39,18 @@ nav a {
     color: var(--bone);
     padding: 10px;
     font-weight: bold;
-    /* transition: all 0.2s ease; */
 }
 
-nav a:hover {
+nav a.active {
+    text-decoration: none;
+    color: var(--bone);
+    background-color: var(--rust);
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+nav a:not(.active):hover {
     color: var(--dark-grey);
     background-color: var(--tan-green);
     border-radius: 5px;
@@ -135,28 +145,28 @@ footer {
 /*** Works on common browsers ***/
 ::selection {
     background-color: var(--rust);
-    color: var(--golden-brown);
+    color: var(--chill-yellow);
 }
 
 /*** Mozilla based browsers ***/
 ::-moz-selection {
     background-color: var(--rust);
-    color: var(--golden-brown);
+    color: var(--chill-yellow);
 }
 
 /***For Other Browsers ***/
 ::-o-selection {
     background-color: var(--rust);
-    color: var(--golden-brown);
+    color: var(--chill-yellow);
 }
 
 ::-ms-selection {
     background-color: var(--rust);
-    color: var(--golden-brown);
+    color: var(--chill-yellow);
 }
 
 /*** For Webkit ***/
 ::-webkit-selection {
     background-color: var(--rust);
-    color: var(--golden-brown);
+    color: var(--chill-yellow);
 }
