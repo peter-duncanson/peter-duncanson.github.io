@@ -95,8 +95,8 @@ p a:hover {
 }
 
 .container img {
-    border-radius: 5px;
-    outline: 5px solid var(--tan-green);
+    border-radius: 2px;
+    outline: 2px solid var(--tan-green);
 }
 
 img.no-border {
@@ -119,7 +119,7 @@ img.no-border {
     margin-bottom: 20px;
     width: 500px;
     border-radius: 5px;
-    outline: 5px solid var(--tan-green);
+    outline: 2px solid var(--tan-green);
 }
 
 pre {
@@ -157,14 +157,14 @@ pre {
 }
 
 .project-card:hover {
+    outline: 2px solid var(--tan-green);
     background-color: var(--tan-green);
-    outline: 5px solid var(--tan-green);
     color: var(--dark-grey);
 }
 
 .project-image img {
     border-radius: 5px;
-    outline: 5px solid var(--tan-green);
+    outline: 2px solid var(--tan-green);
 }
 
 .project-container {
