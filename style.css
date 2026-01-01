@@ -21,7 +21,6 @@ body {
     color: var(--bone);
     font-family: Consolas, monospace;
     line-height: 1.6;
-    margin: 20px;
 }
 
 h1 {
@@ -30,8 +29,14 @@ h1 {
 }
 
 nav {
+    padding: 20px 0;
     text-align: center;
     margin-bottom: 20px;
+    bottom: -30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: url("images/tiles/green_grass.png");
 }
 
 nav a {
@@ -39,6 +44,7 @@ nav a {
     color: var(--bone);
     padding: 10px;
     font-weight: bold;
+
 }
 
 nav a.active {
@@ -68,6 +74,18 @@ footer {
     text-align: center;
 }
 
+p a {
+  color: var(--tan-green);           
+  text-decoration: none;   
+  font-weight: bold;
+}
+
+p a:hover {
+  color: var(--rust);
+  text-decoration: none;
+  border-radius: 5px;
+}
+
 .container {
     text-align: center;
     padding: 20px;
@@ -76,11 +94,36 @@ footer {
     margin: 20px 0;
 }
 
+.container img {
+    border-radius: 5px;
+    outline: 5px solid var(--tan-green);
+}
+
+img.no-border {
+    border-radius: 5px;
+    outline: none;
+}
+
 .container-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-    gap: 25px;
-    padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;     
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.wrap-left {
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    width: 500px;
+    border-radius: 5px;
+    outline: 5px solid var(--tan-green);
+}
+
+pre {
+    font-size: 1.5rem;
 }
 /* portfolio stuff */
 .project-card {
@@ -91,7 +134,7 @@ footer {
     text-decoration: none; 
     display: flex;
     flex-direction: column;
-    text-align: left;
+    text-align: center;
 }
 
 .project-card img {
@@ -99,6 +142,7 @@ footer {
     height: 180px;
     object-fit: cover;
     border-radius: 5px;
+    outline: 5px solid var(--rust);
 }
 
 .project-card h3 {
@@ -118,29 +162,29 @@ footer {
     color: var(--dark-grey);
 }
 
-.contact-links {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 500px;
-    margin: 30px auto; /* Centers the list */
-    text-align: left;
-}
-
-.contact-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 20px;
-    background-color: var(--dark-grey);
+.project-image img {
     border-radius: 5px;
-    text-decoration: none;
-    color: var(--bone);
+    outline: 5px solid var(--tan-green);
 }
 
-.contact-item:hover {
-    background-color: var(--tan-green);
-    color: var(--eerie-black);
+.project-container {
+    text-align: left;
+    padding: 20px;
+    background-color: var(--eerie-black);
+    border-radius: 5px;
+    margin: 20px 0;
+    display: flow-root;
 }
+
+.redacted {
+    background-color: var(--dark-grey);
+    color: var(--dark-grey);
+}
+
+.redacted:hover {
+    background-color: var(--eerie-black);
+    color: var(--bone);
+}    
 
 /*** Works on common browsers ***/
 ::selection {
