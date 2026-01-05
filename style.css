@@ -17,15 +17,15 @@
 
 body {
     background-color: var(--dark-grey);
-    background: url("images/tiles/slate.png");
+    /* background: url("images/tiles/surface_of_mars.png"); */
     color: var(--bone);
-    font-family: Consolas, monospace;
+    font-family: monospace;
     line-height: 1.6;
 }
 
 h1 {
     color: var(--bone);
-    text-align: center;
+    text-align: left;
 }
 
 nav {
@@ -33,10 +33,10 @@ nav {
     text-align: center;
     margin-bottom: 20px;
     bottom: -30px;
-    position: sticky;
+    /* position: sticky; */
     top: 0;
     z-index: 1000;
-    background: url("images/tiles/green_grass.png");
+    /* background: url("images/tiles/slate.png"); */
 }
 
 nav a {
@@ -44,7 +44,6 @@ nav a {
     color: var(--bone);
     padding: 10px;
     font-weight: bold;
-
 }
 
 nav a.active {
@@ -57,17 +56,10 @@ nav a.active {
 }
 
 nav a:not(.active):hover {
-    color: var(--dark-grey);
-    background-color: var(--tan-green);
+    color: var(--bone);
+    background-color: var(--tree-green);
     border-radius: 5px;
 
-}
-
-header {
-    text-align: center;
-    margin-top: 40px;
-    font-size: 1em;
-    color: var(--bone);
 }
 
 footer {
@@ -75,28 +67,30 @@ footer {
 }
 
 p a {
-  color: var(--tan-green);           
+  color: var(--tree-green);           
   text-decoration: none;   
   font-weight: bold;
 }
 
 p a:hover {
   color: var(--rust);
+  background-color: var(--eerie-black);
   text-decoration: none;
   border-radius: 5px;
 }
 
-.container {
-    text-align: center;
+.container-main {
+    text-align: left;
     padding: 20px;
-    background-color: var(--eerie-black);
+    background-color: var(--dark-grey);
     border-radius: 5px;
     margin: 20px 0;
+    outline: 2px solid var(--rust)
 }
 
 .container img {
     border-radius: 2px;
-    outline: 2px solid var(--tan-green);
+    outline: 2px solid var(--rust);
 }
 
 img.no-border {
@@ -119,7 +113,7 @@ img.no-border {
     margin-bottom: 20px;
     width: 500px;
     border-radius: 5px;
-    outline: 2px solid var(--tan-green);
+    outline: 2px solid var(--rust);
 }
 
 pre {
@@ -135,6 +129,7 @@ pre {
     display: flex;
     flex-direction: column;
     text-align: center;
+    outline: 2px solid var(--rust)
 }
 
 .project-card img {
@@ -157,14 +152,14 @@ pre {
 }
 
 .project-card:hover {
-    outline: 2px solid var(--tan-green);
-    background-color: var(--tan-green);
-    color: var(--dark-grey);
+    outline: 2px solid var(--tree-green);
+    background-color: var(--tree-green);
+    color: var(--bone);
 }
 
 .project-image img {
     border-radius: 5px;
-    outline: 2px solid var(--tan-green);
+    outline: 2px solid var(--tree-green);
 }
 
 .project-container {
