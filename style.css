@@ -17,7 +17,7 @@
 
 body {
     background-color: var(--dark-grey);
-    background: url("images/tiles/green_grass.png");
+    background: url("images/tiles/slate.png");
     color: var(--bone);
     font-family: Consolas, monospace;
     line-height: 1.6;
