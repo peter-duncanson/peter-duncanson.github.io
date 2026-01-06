@@ -15,12 +15,33 @@
     --tan-green: #8CA655;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
 body {
-    background-color: var(--dark-grey);
-    /* background: url("images/tiles/surface_of_mars.png"); */
+    /* background-color: var(--eerie-black); */
+    background: url("images/tiles/green_grass.png");
+    display: flex;
+    flex-direction: column;
+    /* Added min-height to ensure footer stays at bottom */
+    min-height: 100vh;
     color: var(--bone);
     font-family: monospace;
     line-height: 1.6;
+    font-size: large;
+    /* Removed justify-content: center to keep content at the top */
+}
+
+main {
+    /* flex: 1 pushes footer to the bottom of the screen */
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    justify-content: flex-start; 
+    padding-top: 50px;      
 }
 
 h1 {
@@ -28,46 +49,14 @@ h1 {
     text-align: left;
 }
 
-nav {
-    padding: 20px 0;
-    text-align: center;
-    margin-bottom: 20px;
-    bottom: -30px;
-    /* position: sticky; */
-    top: 0;
-    z-index: 1000;
-    /* background: url("images/tiles/slate.png"); */
-}
-
-nav a {
-    text-decoration: none;
-    color: var(--bone);
-    padding: 10px;
-    font-weight: bold;
-}
-
-nav a.active {
-    text-decoration: none;
-    color: var(--bone);
-    background-color: var(--rust);
-    padding: 10px;
-    font-weight: bold;
-    border-radius: 5px;
-}
-
-nav a:not(.active):hover {
-    color: var(--bone);
-    background-color: var(--tree-green);
-    border-radius: 5px;
-
-}
-
 footer {
     text-align: center;
+    /* Ensuring footer has padding and stays at the end of the flex flow */
+    padding: 20px 0;
 }
 
 p a {
-  color: var(--tree-green);           
+  color: var(--tan-green);            
   text-decoration: none;   
   font-weight: bold;
 }
@@ -83,94 +72,45 @@ p a:hover {
     text-align: left;
     padding: 20px;
     background-color: var(--dark-grey);
-    border-radius: 5px;
+    border-radius: 0px;
+    border: 5px inset var(--rust);
     margin: 20px 0;
-    outline: 2px solid var(--rust)
+    max-width: 900px;
+    width: 90%;
 }
 
-.container img {
-    border-radius: 2px;
-    outline: 2px solid var(--rust);
-}
-
-img.no-border {
-    border-radius: 5px;
-    outline: none;
-}
-
-.container-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;     
-  padding: 20px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.wrap-left {
-    float: left;
-    margin-right: 20px;
-    margin-bottom: 20px;
-    width: 500px;
-    border-radius: 5px;
-    outline: 2px solid var(--rust);
-}
-
-pre {
-    font-size: 1.5rem;
-}
-/* portfolio stuff */
-.project-card {
-    color: var(--bone);
-    background-color: var(--dark-grey);
-    border-radius: 5px;
-    overflow: hidden;
-    text-decoration: none; 
+.wrapper {
     display: flex;
-    flex-direction: column;
-    text-align: center;
-    outline: 2px solid var(--rust)
+    align-items: flex-start; 
+    gap: 30px;              
+    margin-bottom: 20px;
 }
 
-.project-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 5px;
-    outline: 5px solid var(--rust);
+.wrapper-text{
+    flex: 2; /* Gives more room to text */
 }
 
-.project-card h3 {
-    margin: 10px 10px 10px 10px;
-    font-size: 1.25rem;
+.wrapper-image{
+    flex: 1; 
+    max-width: 300px; /* Limits the image container size */
+    filter: brightness(0.8) grayscale(0.5);
 }
 
-.project-card p {
-    margin: 10px 10px 10px 10px;
-    font-size: 0.95rem;
-    line-height: 1.4;
+.wrapper-image img {
+    width: 100%; 
+    height: auto;
+    border-radius: 0px; 
+    border: 3px inset var(--rust); 
 }
 
-.project-card:hover {
-    outline: 2px solid var(--tree-green);
-    background-color: var(--tree-green);
-    color: var(--bone);
+/* stacks on mobile */
+@media (max-width: 600px) {
+    .wrapper{
+        flex-direction: column;
+    }
 }
 
-.project-image img {
-    border-radius: 5px;
-    outline: 2px solid var(--tree-green);
-}
-
-.project-container {
-    text-align: left;
-    padding: 20px;
-    background-color: var(--eerie-black);
-    border-radius: 5px;
-    margin: 20px 0;
-    display: flow-root;
-}
-
+/* interactive 'redacted' type text */
 .redacted {
     background-color: var(--dark-grey);
     color: var(--dark-grey);
@@ -179,32 +119,19 @@ pre {
 .redacted:hover {
     background-color: var(--eerie-black);
     color: var(--bone);
-}    
+}
 
-/*** Works on common browsers ***/
+/* Highlight text color change */
 ::selection {
     background-color: var(--rust);
     color: var(--chill-yellow);
 }
 
-/*** Mozilla based browsers ***/
 ::-moz-selection {
     background-color: var(--rust);
     color: var(--chill-yellow);
 }
 
-/***For Other Browsers ***/
-::-o-selection {
-    background-color: var(--rust);
-    color: var(--chill-yellow);
-}
-
-::-ms-selection {
-    background-color: var(--rust);
-    color: var(--chill-yellow);
-}
-
-/*** For Webkit ***/
 ::-webkit-selection {
     background-color: var(--rust);
     color: var(--chill-yellow);
