@@ -21,7 +21,6 @@ html, body {
 }
 
 body {
-    /* background-color: var(--eerie-black); */
     background: url("images/tiles/pine_needles.png");
     display: flex;
     flex-direction: column;
@@ -107,12 +106,12 @@ p a:hover {
 
 /* interactive 'redacted' type text */
 .redacted {
-    background-color: var(--dark-grey);
-    color: var(--dark-grey);
+    background-color: var(--eerie-black);
+    color: var(--eerie-black);
 }
 
 .redacted:hover {
-    background-color: var(--eerie-black);
+    background-color: var(--dark-grey);
     color: var(--bone);
 }
 

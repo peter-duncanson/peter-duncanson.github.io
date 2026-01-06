@@ -10,58 +10,39 @@
 
 <body>
 
-    <!-- <nav> -->
-    <!--     <a href="index.html">Home</a> | -->
-    <!--     <a href="portfolio.html">Portfolio</a> | -->
-    <!--     <a href="resume.html">Resume</a>  -->
-    <!-- </nav>  -->
-
     <main>
-        <div class="project-container">
-            <h2>Morse Code Terminal</h2>
-            <span class=project-image>
-            <img src="images/morse-code-terminal/main.png" class="wrap-left">
-            </span>
-            <p>The theme of this Hackathon was Retro v. Modern.
-            We decided to build a shorthand communication device
-            where morse code is used to navigate a directory style
-            menu system to select keywords, and the Google Gemini API
-            will parse this input into a more readable and grammatically
-            correct sentence.</p>
-            <p>The original idea was for the morse code input to be handled
-            with an Arduino, the pyserial module, and a few buttons. We experienced
-            major technical difficulties and due to the time constraints of the
-            Hackathon, we ended up with a functional terminal that uses the
-            computer keyboard for input, and a functional Arduino morse code input
-            device as discrete projects that don't function together.
-            </p>
-            <p class="container">All of the <span class="redacted">spaghetti</span> code is available 
-            <a href="https://github.com/peter-duncanson/HackRPI-2025" target="_blank">here</a>.</p>
-            <p class="container">-~-</p>
-            <p>For a shorthand comminication decive, it makes sense to have commonly used words divided into categories
-            that an end user can easily navigate. Since Gemini is handling the final parsing of the input, it made sense
-            to leave out pronouns and let the AI infer context. To get a large amount of commonly used words, I wrote a
-            Python script to scrape the RPI subreddit. It uses json file structure to deal with the dynamic loading nature of
-            reddit. Reddit heavily restricts the use of it's API these days, since Google purchased the right to use Reddit data to
-            train it's AI models. This solution is much slower but just as effective for gathering large amounts of data.</p>
-            <p>Below is an image of a full run of this scraper. The time limit refers to the age of posts and is set by a
-            global variable in the script.</p>
-            <div style="display: flow-root; margin-bottom: 20px;">
-            <img src="images/morse-code-terminal/scraper_full_run.png" class="wrap-left">
-            <p>I scraped the last 90 days of posts and ended up with ~10,000 words. The next task was categorizing them and creating the
-            Python dictionary that would be used for orgainizing everything. I used the Gemini API in order to catagorize them into categories
-            as shown below. This not only saved me countless hours that I did not have, but gave me practice working with the API that I would
-            need later. Negative and Positive share the same categories with Neutral, but were left unexpanded to save space.</p>
-            <p>
-            Once I had all of the words, I asked Gemini to go through the file and remove any pronouns, as well as overly commonly used words (the, to, etc)
-            If a word passed this filter, it was added to a new json file, along with a counter of how many times it occured in all of the data.
-            Once this file was finished, I had Gemini categorize the words as shown. The final dictionary used for the program is the top 10 words
-            for each category.</p>
+        <div class="container-main">
+            <h1>Morse Code Terminal</h1>
+
+            <div class="wrapper">
+                <div class="wrapper-image">
+                    <img src="images/morse-code-terminal/main.png" alt="Morse Code Terminal Main">
+                </div>
+                <div class="wrapper-text">
+                    <p>The theme of this Hackathon was Retro v. Modern. We decided to build a shorthand communication device where morse code is used to navigate a directory style menu system to select keywords, and the Google Gemini API will parse this input into a more readable and grammatically correct sentence.</p>
+                    <p>The original idea was for the morse code input to be handled with an Arduino, the pyserial module, and a few buttons. We experienced major technical difficulties and due to the time constraints of the Hackathon, we ended up with a functional terminal and a functional Arduino input device as discrete projects.</p>
+                    <p>All of the <span class="redacted">spaghetti</span> code is available 
+                    <a href="https://github.com/peter-duncanson/HackRPI-2025" target="_blank">here</a>.</p>
+                </div>
+            </div>
+
+            <p style="text-align: center;">-~-</p>
+
+            <div class="wrapper">
+                <div class="wrapper-text">
+                    <p>For a shorthand communication device, it makes sense to have commonly used words divided into categories. I wrote a Python script to scrape the RPI subreddit. It uses json file structure to deal with the dynamic loading nature of reddit. Since Google purchased the right to use Reddit data, the API is heavily restricted, but this scraping solution remains effective for gathering data.</p>
+                    <p>I scraped the last 90 days of posts and ended up with ~10,000 words. I used the Gemini API to categorize them into the structure shown below, removing pronouns and common "stop words." Only the "Neutral" subdirectory is shown expanded in order to save space, "Negative" and "Positive" are identical.</p>
+                </div>
+                <div class="wrapper-image">
+                    <img src="images/morse-code-terminal/scraper_full_run.png" alt="Scraper Run">
+                </div>
+            </div>
+
             <pre>
                 └── Root/
                     ├── Negative
                     ├── Positive
-                    └── Neutral	/
+                    └── Neutral/
                         ├── Academic
                         ├── Actions
                         ├── Items
@@ -71,75 +52,44 @@
                         ├── Resources
                         └── Social
             </pre>
-            </div>
-            <p class="container">-~-</p>
 
-            <div style="display: flow-root; margin-bottom: 20px;">
-            <img src="images/morse-code-terminal/root.png" class="wrap-left">
-            From this root screen you can ask for help with SOS in morse code, ...---...</p>
-            <p>
-            How do you know how to ask for help? Not sure, maybe knowing morse code is a prereq for using this thing.
-            </p>
-            <p>
-            Although if you enter random dots and dashes long enough, you're bound to 
-            <a href="https://en.wikipedia.org/wiki/Infinite_monkey_theorem" target="_blank">find it eventually</a>.
-            </p>
-            </div>
+            <p style="text-align: center;">-~-</p>
 
-            <div style="display: flow-root; margin-bottom: 20px;">
-            <img src="images/morse-code-terminal/sos.png" class="wrap-left">
-            From the SOS screen, the existance of a game is revealed.
-            <p>The game began as an afterthougt, something to give the program more functionality
-            and interact more with the Gemini API. However, it's actually really fun. You are given
-            increasingly easier hints as you navigate this word category tree to find the correct word.</p>
+            <div class="wrapper">
+                <div class="wrapper-image">
+                    <img src="images/morse-code-terminal/root.png" alt="Root Screen">
+                    <img src="images/morse-code-terminal/sos.png" alt="SOS Screen" style="margin-top: 10px;">
+                </div>
+                <div class="wrapper-text">
+                    <p>From the root screen, you can ask for help with SOS in morse code: <strong>...---...</strong></p>
+                    <p>The SOS screen reveals a hidden game. You are given increasingly easier hints as you navigate the word category tree to find the correct word. It’s a fun way to interact with the Gemini API while testing your navigation skills.</p>
+                </div>
             </div>
 
-            <div style="display: flow-root; margin-bottom: 20px;">
-            <img src="images/morse-code-terminal/game-start.png" class="wrap-left">
-            Entering in .--. starts the game. Something I will fix if I ever have a large amount of spare time
-            and motivation is the the wrapping of the text for the game interface. Not good.
+            <div class="wrapper">
+                <div class="wrapper-text">
+                    <p>Entering <strong>.--.</strong> starts the game. In the example below, the prompt was "Lacking consideration for others feelings." By navigating to <strong>Negative -> Social</strong> and selecting "rude" with <strong>"---"</strong>, the user gets a correct guess!</p>
+                </div>
+                <div class="wrapper-image">
+                    <img src="images/morse-code-terminal/guess.png" alt="Guessing">
+                    <img src="images/morse-code-terminal/correct-guess.png" alt="Correct Guess" style="margin-top: 10px;">
+                </div>
             </div>
 
-            <div style="display: flow-root; margin-bottom: 20px;">
-            <img src="images/morse-code-terminal/guess.png" class="wrap-left">
-            "Lacking consideration for others feelings",
-            <p>
-            Navigating to Negative -> social for the prompt.
-            </p>
-            <p>
-            Then selecting "rude" with "---".
-            </p>
-            </div>
+            <p style="text-align: center;">-~-</p>
 
-            <div style="display: flow-root; margin-bottom: 20px;">
-            <img src="images/morse-code-terminal/correct-guess.png" class="wrap-left">
-            Correct guess!
-            <p>
-            </p>
-            </div>
-
-            <div style="display: flow-root; margin-bottom: 20px;">
-            <img src="images/morse-code-terminal/interpreted_message.png" class="wrap-left">
-            Finally, the initial point of this project. The game had the unintended beneficial side effect of
-            loading up the prompt with random words for the AI to try and interpret. The more you load, the
-            more wild the results are in my experience.
-            </p>
-            </div>
-
-
-            <p class="container">-~-</p>
-
-            <div class="container">
-            <h1>The Team!</h1>
-            <img src="images/morse-code-terminal/team.jpeg">
+            <div style="text-align: center;">
+                <h1>The Team!</h1>
+                <div class="wrapper-image" style="max-width: 100%; margin: 0 auto;">
+                    <img src="images/morse-code-terminal/team.jpeg" alt="The Team" style="max-width: 600px;">
+                </div>
             </div>
         </div>
-
     </main>
 
     <footer>
         <p>&copy; 2026 Peter Duncanson</p>
     </footer>
-     
+
 </body>
 </html>
