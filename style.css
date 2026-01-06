@@ -22,7 +22,7 @@ html, body {
 
 body {
     /* background-color: var(--eerie-black); */
-    background: url("images/tiles/black_fractal.png");
+    background: url("images/tiles/pine_needles.png");
     display: flex;
     flex-direction: column;
     min-height: 100vh;
