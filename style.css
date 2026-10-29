@@ -21,7 +21,7 @@ html, body {
 }
 
 body {
-    background: url("images/tiles/pipes.png");
+    background: url("images/tiles/pipes.jpg");
     display: flex;
     flex-direction: column;
     min-height: 100vh;
