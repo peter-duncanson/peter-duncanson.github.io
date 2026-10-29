@@ -21,7 +21,7 @@ html, body {
 }
 
 body {
-    background: url("images/tiles/epoxy_floor.png");
+    background: url("images/tiles/pipes.png");
     display: flex;
     flex-direction: column;
     min-height: 100vh;
